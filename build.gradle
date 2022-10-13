@@ -1,0 +1,32 @@
+plugins {
+    id 'org.springframework.boot' version '2.7.4'
+    id 'io.spring.dependency-management' version '1.0.14.RELEASE'
+    id 'java'
+}
+
+group = 'com.trustpilot'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-webflux:2.7.4'
+//    implementation 'org.springframework.boot:spring-boot-starter-cache:2.7.4'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.7.4'
+    testImplementation 'io.projectreactor:reactor-test:3.4.23'
+    implementation group: 'org.jsoup', name: 'jsoup', version: '1.15.3'
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+//    implementation group: 'io.projectreactor.addons', name: 'reactor-extra', version: '3.3.3.RELEASE'
+    implementation group: 'io.projectreactor.addons', name: 'reactor-extra', version: '3.3.8.RELEASE'
+    implementation group: 'com.google.guava', name: 'guava', version: '29.0-jre'
+
+
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
